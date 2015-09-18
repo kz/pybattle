@@ -8,11 +8,13 @@ class Attack(object):
         self.accuracy = accuracy
 
     def attempt(self):
-        payload = {}
+        result = {}
 
         if random.randint(0, 101) <= self.accuracy:
-            payload['strength'] = self.strength
-            payload['message'] = "{!s}'s python attacked with {!s} strength!\n{!s}'s python now has {!s} HP."
+            result['strength'] = self.strength
+            result['message'] = "{current}'s python attacked with {strength} strength!\n{!s}'s python now has {health} HP."
         else:
-            payload['strength'] = 0
-            payload['message'] = "{!s}'s python missed!\n{!s}'s python is unaffected."
+            result['strength'] = 0
+            result['message'] = "{current}'s python missed!\n{target}'s python is unaffected."
+
+        return result

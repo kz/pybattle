@@ -74,8 +74,19 @@ def main():
         # Show chosen attack
         sleep(1)
         # noinspection PyUnboundLocalVariable
-        print("\n{!s} chose {!s}!".format(current_player.name, chosen_attack.name))
+        print("\n{!s} chose {!s}!\n".format(current_player.name, chosen_attack.name))
         sleep(1)
+
+        # Process attack
+        attack_result = chosen_attack.attempt()
+        target_player.deplete(attack_result['strength'])
+
+        # Display attack result to user
+        print(attack_result['message']
+              .replace('{current}', current_player.name)
+              .replace('{target}', target_player.name)
+              .replace('{strength}', str(attack_result['strength']))
+              .replace('{health}', str(target_player.health)))
 
         # Update player objects and switch around current/target players
         if current_player.name == player_one.name:
@@ -90,8 +101,6 @@ def main():
 
             current_player = player_one
             target_player = player_one
-
-        break
 
 
 if __name__ == '__main__':
