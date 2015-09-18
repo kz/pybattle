@@ -49,8 +49,8 @@ def main():
 
         # Output player HPs
         sleep(0.5)
-        print("{!s} - {!s}/100 HP".format(player_one.name, player_two.health))
-        print("{!s} - {!s}/100 HP\n".format(player_two.name, player_one.health))
+        print("{!s} - {!s}/100 HP".format(player_one.name, player_one.health))
+        print("{!s} - {!s}/100 HP\n".format(player_two.name, player_two.health))
         sleep(0.5)
 
         # Output available attacks
