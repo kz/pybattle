@@ -1,0 +1,10 @@
+# This configuration file contains a list of all attacks
+Tailslap:
+  strength: 25
+  accuracy: 100
+Tackle:
+  strength: 35
+  accuracy: 75
+Bite:
+  strength: 50
+  accuracy: 50
