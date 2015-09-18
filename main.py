@@ -62,7 +62,7 @@ def main():
         print("==================\n")
         sleep(0.5)
 
-        # User inputs attack
+        # Player inputs attack
         while True:
             input_attack = input("{!s}, enter the name of the attack you want to use: ".format(current_player.name))
             if input_attack in attacks:
@@ -81,7 +81,7 @@ def main():
         attack_result = chosen_attack.attempt()
         target_player.deplete(attack_result['strength'])
 
-        # Display attack result to user
+        # Display attack result to players
         print(attack_result['message']
               .replace('{current}', current_player.name)
               .replace('{target}', target_player.name)
@@ -100,7 +100,22 @@ def main():
             player_one = target_player
 
             current_player = player_one
-            target_player = player_one
+            target_player = player_two
+
+        sleep(1.5)
+        print("\n=======================================================\n")
+
+    # Calculate winning/losing player
+    if player_one.health <= 0:
+        winning_player = player_one
+        losing_player = player_two
+    else:
+        winning_player = player_two
+        losing_player = player_one
+
+    # Display results to players
+    print("{!s}'s python falls to the ground in defeat.".format(losing_player.name))
+    print("{!s} is the winner!".format(winning_player.name))
 
 
 if __name__ == '__main__':

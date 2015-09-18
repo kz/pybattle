@@ -12,7 +12,8 @@ class Attack(object):
 
         if random.randint(0, 101) <= self.accuracy:
             result['strength'] = self.strength
-            result['message'] = "{current}'s python attacked with {strength} strength!\n{!s}'s python now has {health} HP."
+            result['message'] = "{current}'s python attacked with {strength} strength!" \
+                                "\n{target}'s python now has {health} HP."
         else:
             result['strength'] = 0
             result['message'] = "{current}'s python missed!\n{target}'s python is unaffected."
