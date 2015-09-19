@@ -71,6 +71,12 @@ def main():
             if input_attack in attacks:
                 chosen_attack = attacks[input_attack]
                 current_player.set_previous_attack_name(input_attack)
+                if input_attack == "Heal":
+                    if current_player.has_healed:
+                        current_player.heal(30)
+                        break
+                    else:
+                        print("The selected attack is invalid. Try again!\n")
                 break
             else:
                 print("The selected attack is invalid. Try again!\n")
@@ -89,7 +95,8 @@ def main():
               .replace('{current}', current_player.name)
               .replace('{target}', target_player.name)
               .replace('{strength}', str(attack_result['strength']))
-              .replace('{health}', str(target_player.health)))
+              .replace('{health}', str(target_player.health))
+              .replace('{cur_health}', str(current_player.health)))
 
         # Update player objects and switch around current/target players
         if current_player.name == player_one.name:

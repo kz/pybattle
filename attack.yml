@@ -1,7 +1,7 @@
 # This configuration file contains a list of all attacks
 Tailslap:
   strength: 25
-  accuracy: 100
+  accuracy: 90
 Tackle:
   strength: 35
   accuracy: 65
@@ -9,5 +9,8 @@ Bite:
   strength: 60
   accuracy: 30
 Dodge:
+  strength: 0
+  accuracy: 100
+Heal:
   strength: 0
   accuracy: 100

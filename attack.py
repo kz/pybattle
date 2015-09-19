@@ -26,6 +26,9 @@ class Attack(object):
                                     "\n{target}'s python now has {health} HP."
             elif self.name == "Dodge":
                 result['message'] = "{current}'s python will attempt to dodge the next attack!"
+            elif self.name == "Heal":
+                result['message'] = "{current}'s python healed!" \
+                                    "\n{current}'s python now has {cur_health} HP."
             else:
                 result['message'] = "{current}'s python attacked with {strength} strength!" \
                                     "\n{target}'s python now has {health} HP."
