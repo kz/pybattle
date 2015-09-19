@@ -64,21 +64,24 @@ def main():
 
         # Player inputs attack
         while True:
-            input_attack = input("{!s}, enter the name of the attack you want to use: ".format(current_player.name))
+            input_attack = input("{!s}, enter the name of the attack you want to use: ".format(current_player.name)) \
+                .strip() \
+                .lower() \
+                .capitalize()
             if input_attack in attacks:
                 chosen_attack = attacks[input_attack]
+                current_player.set_previous_attack_name(input_attack)
                 break
             else:
                 print("The selected attack is invalid. Try again!\n")
 
         # Show chosen attack
         sleep(1)
-        # noinspection PyUnboundLocalVariable
         print("\n{!s} chose {!s}!\n".format(current_player.name, chosen_attack.name))
         sleep(1)
 
         # Process attack
-        attack_result = chosen_attack.attempt()
+        attack_result = chosen_attack.attempt(target_player.previous_attack_name)
         target_player.deplete(attack_result['strength'])
 
         # Display attack result to players
@@ -107,11 +110,11 @@ def main():
 
     # Calculate winning/losing player
     if player_one.health <= 0:
-        winning_player = player_one
-        losing_player = player_two
-    else:
         winning_player = player_two
         losing_player = player_one
+    else:
+        winning_player = player_one
+        losing_player = player_two
 
     # Display results to players
     print("{!s}'s python falls to the ground in defeat.".format(losing_player.name))

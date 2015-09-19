@@ -4,7 +4,10 @@ Tailslap:
   accuracy: 100
 Tackle:
   strength: 35
-  accuracy: 75
+  accuracy: 65
 Bite:
-  strength: 50
-  accuracy: 40
+  strength: 60
+  accuracy: 30
+Dodge:
+  strength: 0
+  accuracy: 100
