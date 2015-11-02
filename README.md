@@ -8,3 +8,12 @@ PyBattle is a basic Pokemon-style fighting game built in Python 3.4. This was ma
 - They take turns with attacks
 - The first one to reduce other player's HP to 0 wins
 - Attacks have statistics such as strength and accuracy
+
+## Credits
+
+- [Kelvin Zhang](https://github.com/kz)
+- [All Contributors](link-contributors)
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
